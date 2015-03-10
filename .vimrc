@@ -233,6 +233,13 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+""""""""""""""""""""""""""""""
+" => folding
+""""""""""""""""""""""""""""""
+set foldmethod=indent
+set foldnestmax=2
+nnoremap <space> za
+vnoremap <space> zf
 
 """"""""""""""""""""""""""""""
 " => Status line
