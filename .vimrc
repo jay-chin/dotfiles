@@ -224,6 +224,7 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 
 " Linebreak on 500 characters
 set lbr
@@ -290,4 +291,7 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>s? z=
 
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Python centric stuff goes here
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufWritePost *.py call Flake8()
