@@ -1,26 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
-"       Amir Salihefendic
-"       http://amix.dk - amix@amix.dk
-"
-" Version: 
-"       5.0 - 29/05/12 15:43:36
-"
-" Blog_post: 
-"       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
-"
-" Syntax_highlighted:
-"       http://amix.dk/vim/vimrc.html
-"
-" Raw_version: 
-"       http://amix.dk/vim/vimrc.txt
+" Adapted from https://github.com/amix/vimrc
 "
 " Sections:
 "    -> General
@@ -36,6 +14,8 @@
 "    -> Spell checking
 "    -> Misc
 "    -> Helper functions
+"    -> Python Centric
+"    -> Jay's custom config
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 execute pathogen#infect()
@@ -174,6 +154,9 @@ set tm=500
 " Add a bit extra margin to the left
 set foldcolumn=1
 
+" highligh text after 79 characters
+set colorcolumn=79
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -238,6 +221,7 @@ set wrap "Wrap lines
 " => folding
 """"""""""""""""""""""""""""""
 set foldmethod=indent
+set foldlevel=99
 set foldnestmax=2
 nnoremap <space> za
 vnoremap <space> zf
@@ -295,3 +279,14 @@ map <leader>s? z=
 " => Python centric stuff goes here
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWritePost *.py call Flake8()
+" Enable Supertab completion
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Jay's custom leader
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Strip out all trailing whitespace in file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>v <C-w>v<C-w>l
