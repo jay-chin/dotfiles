@@ -1,6 +1,16 @@
 [user]
     name = Jay Chin
     email = jay.s.chin@gmail.com 
+
+[push]
+    default=simple
+
+[url "https://bitbucket.org/"]
+        insteadOf = bb:
+
+[url "https://github.com/"]
+        insteadOf = gh:
+
 [core]
     editor = vim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
