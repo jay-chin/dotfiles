@@ -55,6 +55,8 @@ def create_link(target):
                 print "Backing up %s to %s" % (linkname, bkp)
             if os.path.islink(linkname):
                 os.remove(linkname)
+        else:
+            return
     os.symlink(target, linkname) 
 
 def main():

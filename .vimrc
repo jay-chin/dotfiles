@@ -19,6 +19,7 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 execute pathogen#infect()
+filetype off
 syntax on
 filetype plugin indent on
 
@@ -257,10 +258,10 @@ vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 " To go to the previous search results do:
 "   <leader>p
 "
-map <leader>cc :botright cope<cr>
-map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
+"map <leader>cc :botright cope<cr>
+"map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+"map <leader>n :cn<cr>
+"map <leader>p :cp<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -288,5 +289,6 @@ set completeopt=menuone,longest,preview
 " => Jay's custom leader
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Strip out all trailing whitespace in file
+let mapleader=","
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>v <C-w>v<C-w>l
