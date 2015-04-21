@@ -17,24 +17,54 @@
 
 [color]
     ui = auto
+
 [color "branch"]
     current = yellow bold
     local = green bold
     remote = cyan bold
+
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
     old = red bold
     new = green bold
     whitespace = red reverse
+
 [color "status"]
     added = green bold
     changed = yellow bold
     untracked = red bold
+
 [diff]
     tool = vimdiff
+
 [difftool]
     prompt = false
+
 [github]
     user = jay-chin 
     token = token
+
+[alias]
+    a = add -v
+    aa = add -A -v .
+    br = branch
+    c = commit -v
+    co = checkout
+    d = diff
+    dc = diff --staged
+    dg = !sh -c 'git diff $(git status-grep $1)' -
+    dw = diff --color-words
+
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=iso
+    last = log --decorate --numstat -1
+
+    r = reset
+    r1 = reset HEAD^
+    r2 = reset HEAD^^
+    rh = reset --hard
+    rh1 = reset HEAD^ --hard
+    rh2 = reset HEAD^^ --hard
+
+    s = status -sb
+    unstage = reset HEAD --
