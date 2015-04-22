@@ -65,7 +65,8 @@ def create_link(target):
 
 def main():
     cwd = os.path.dirname(os.path.realpath(__file__))
-    targets = [f for f in os.listdir(cwd) if __file__ not in f]
+    ignore = [__file__, ".git", ".gitignore"]
+    targets = [f for f in os.listdir(cwd) if f not in ignore]
     for t in targets:
         if query_yes_no("Link %s" % t):
             create_link(os.path.join(cwd, t))
