@@ -277,6 +277,20 @@ map <leader>sa zg
 map <leader>s? z=
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ultisnip
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/vim-snippets/UltiSnips']
+
+let g:ultisnips_python_style="sphinx"
+
+" If you want :UltiSnipsEdit to split your window.
+" let g:UltiSnipsEditSplit="vertical"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Python centric stuff goes here
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWritePost *.py call Flake8()
@@ -285,10 +299,18 @@ au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
+"flake-8 settings https://github.com/nvie/vim-flake8
+let g:flake8_show_in_file=1  " show markers in file
+
+" Map <F7> to execute python file
+au FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Jay's custom leader
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=","
 " Strip out all trailing whitespace in file
+nnoremap <leader>rtw :%s/\s\+$//<cr>:let @/=''<CR>
 let mapleader=","
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>v <C-w>v<C-w>l

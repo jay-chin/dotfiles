@@ -1,6 +1,3 @@
-[submodule ".vim/bundle/snipmate"]
-	path = .vim/bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim.git
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -19,3 +16,9 @@
 [submodule ".vim/bundle/vim-ansible-yaml"]
 	path = .vim/bundle/vim-ansible-yaml
 	url = https://github.com/chase/vim-ansible-yaml.git
+[submodule ".vim/bundle/ultisnips"]
+	path = .vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule ".vim/vim-snippets"]
+	path = .vim/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
