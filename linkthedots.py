@@ -1,5 +1,6 @@
 import os
 import sys
+import shutil
 
 
 def query_yes_no(question, default="yes"):
@@ -40,7 +41,10 @@ def backup(source, suffix="bkp"):
     """
     dst = "%s_%s" % (source, suffix)
     print "backing up %s" % dst
-    os.rename(source, dst)
+    if os.path.isfile(source):
+        os.renames(source, dst)
+    if os.path.isdir(source):
+        shutil.move(source, dst)
     return dst
 
 def create_link(target):
