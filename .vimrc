@@ -186,6 +186,13 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+" give us 256 color schemes!
+set term=screen-256color
+
+" give us nice EOL (end of line) characters
+set list
+set listchars=tab:▸\ ,eol:¬
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -293,7 +300,7 @@ let g:ultisnips_python_style="sphinx"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Python centric stuff goes here
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufWritePost *.py call Flake8()
+" autocmd BufWritePost *.py call Flake8()
 " Enable Supertab completion
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"

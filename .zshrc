@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -93,6 +94,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
+export USE_EDITOR=$EDITOR
+export VISUAL=$EDITOR
+
+#
+# # ooh, what is this? Aliases?
+source ~/.oh-my-zsh/lib/aliases.zsh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -108,3 +115,16 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# aliases for Tmux
+alias tmux='tmux -2'
+alias ta='tmux attach -t'
+alias tnew='tmux new -s'
+alias tls='tmux ls'
+alias tkill='tmux kill-session -t'
+#
+
+# Jay's Customisation 
+bindkey -v  # vim keybinding
+bindkey "^u" up-line-or-history
+bindkey "^n" down-line-or-history
