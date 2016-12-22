@@ -69,7 +69,7 @@ set tm=500
 set foldcolumn=1
 
 " highligh text after 79 characters
-set colorcolumn=79
+" set colorcolumn=79
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -200,6 +200,8 @@ let g:ultisnips_python_style="sphinx"
 " autocmd BufWritePost *.py call Flake8()
 " Enable Supertab completion
 au FileType python set omnifunc=pythoncomplete#Complete
+" highligh text after 79 characters
+au FileType python set colorcolumn=79 
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
@@ -213,8 +215,5 @@ au FileType python nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 " => Jay's custom leader
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=","
-" Strip out all trailing whitespace in file
-nnoremap <leader>rtw :%s/\s\+$//<cr>:let @/=''<CR>
-let mapleader=","
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-nnoremap <leader>v <C-w>v<C-w>l
+" Launch Nerd Tree
+nnoremap <leader>e :NERDTree<cr>
