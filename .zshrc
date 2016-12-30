@@ -101,6 +101,9 @@ export VISUAL=$EDITOR
 # # ooh, what is this? Aliases?
 source ~/.oh-my-zsh/lib/aliases.zsh
 
+# Disable auto update
+export DISABLE_AUTO_UPDATE=true
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
